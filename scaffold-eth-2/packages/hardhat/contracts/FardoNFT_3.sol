@@ -11,6 +11,7 @@ contract FardoNFT is ERC721 {
 	struct Fardo {
 		uint256 weight;
 		string material;
+		uint256 qualityRating;
 	}
 
 	mapping(uint256 => Fardo) public fardos;
@@ -21,13 +22,9 @@ contract FardoNFT is ERC721 {
 		uint256 tokenId = _tokenIdCounter.current();
 		_tokenIdCounter.increment();
 
-		fardos[tokenId] = Fardo({ weight: weight, material: material });
+		fardos[tokenId] = Fardo({ weight: weight, material: material , qualityRating: 0 });
 
 		_mint(msg.sender, tokenId);
-	}
-
-	function transferFardoNFT(address to, uint256 tokenId) public {
-		transferFrom(msg.sender, to, tokenId);
 	}
 
 	function getFardoDetails(
