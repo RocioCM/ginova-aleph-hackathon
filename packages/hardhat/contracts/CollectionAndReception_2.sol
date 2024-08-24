@@ -78,6 +78,12 @@ contract CollectionAndReception {
 			receivedQuantity.pet > 0 || receivedQuantity.aluminum > 0,
 			"Waste was not received"
 		);
+		require(
+			collections[wasteId].status == Status.Collected,
+			"Waste was not collected"
+		);
+		require(receptions[wasteId].wasteId == 0, "Waste was already received");
+
 		receptions[wasteId] = Reception({
 			wasteId: wasteId,
 			recycler: msg.sender,
@@ -86,12 +92,13 @@ contract CollectionAndReception {
 		emit WasteReceived(wasteId, msg.sender, receivedQuantity);
 
 		uint256 reliabilityScore = calculateReliability(wasteId);
-		reliability[msg.sender].reliabilityScore =
-			(reliability[msg.sender].reliabilityScore *
-				reliability[msg.sender].totalCollections +
+		Reliability storage prevSenderReliability = reliability[msg.sender];
+		prevSenderReliability.reliabilityScore =
+			(prevSenderReliability.reliabilityScore *
+				prevSenderReliability.totalCollections +
 				reliabilityScore) /
-			(reliability[msg.sender].totalCollections + 1);
-		reliability[msg.sender].totalCollections++;
+			(prevSenderReliability.totalCollections + 1);
+		prevSenderReliability.totalCollections++;
 	}
 
 	function calculateReliability(
@@ -100,18 +107,23 @@ contract CollectionAndReception {
 		Collection memory collection = collections[wasteId];
 		Reception memory reception = receptions[wasteId];
 		require(
-			collection.status != Status.Collected,
+			collection.status == Status.Collected,
 			"Waste was not collected"
 		);
 
-		uint256 reliabilityScore = 100 -
-			uint256(
-				(reception.receivedQuantity.pet / collection.quantity.pet) * 50
-			) -
-			uint256(
-				(reception.receivedQuantity.aluminum /
-					collection.quantity.aluminum) * 50
-			);
+		uint256 scale = 100;
+
+		// Reliability is 100 if the recycler received the exact quantity of waste collected.
+		uint256 reliabilityScore = (((scale * reception.receivedQuantity.pet) /
+			(collection.quantity.pet)) * 50) /
+			scale +
+			(((scale * reception.receivedQuantity.aluminum) /
+				(collection.quantity.aluminum)) * 50) /
+			scale;
+
+		if (reliabilityScore > 100) {
+			reliabilityScore = 100;
+		}
 
 		return reliabilityScore;
 	}
