@@ -20,6 +20,7 @@ module.exports = {
           "base-100": "#ffffff",
           "base-200": "#f4f8ff",
           "base-300": "#DAE8FF",
+          "base-400": "#AABBD0",
           "base-content": "#212638",
           info: "#93BBFB",
           success: "#34EEB6",
@@ -41,24 +42,30 @@ module.exports = {
       },
       {
         dark: {
-          primary: "#212638",
-          "primary-content": "#F9FBFF",
-          secondary: "#323f61",
-          "secondary-content": "#F9FBFF",
-          accent: "#4969A6",
-          "accent-content": "#F9FBFF",
-          neutral: "#F9FBFF",
-          "neutral-content": "#385183",
-          "base-100": "#385183",
-          "base-200": "#2A3655",
-          "base-300": "#212638",
+          primary: "#F27B54",
+          "primary-content": "#FFF",
+          secondary: "#32906C",
+          "secondary-content": "#FFF",
+          accent: "#FFF",
+          "accent-content": "#1c1c1c",
+          neutral: "#FFF",
+          "neutral-content": "#45ba8b",
+          "base-100": "#32906C",
+          "base-200": "#215F47",
+          "base-300": "#123528",
+          "base-400": "#1c1c1c",
           "base-content": "#F9FBFF",
           info: "#385183",
           success: "#34EEB6",
           warning: "#FFCF72",
-          error: "#FF8863",
+          error: "#ff6b63",
 
           "--rounded-btn": "9999rem",
+
+          ".bg-gradient": {
+            backgroundImage:
+              "linear-gradient(173deg, #000 1.28%, #050F0B 14.87%, #123528 30.1%, #215F47 46.97%, #32906C 95.43%)",
+          },
 
           ".tooltip": {
             "--tooltip-tail": "6px",
