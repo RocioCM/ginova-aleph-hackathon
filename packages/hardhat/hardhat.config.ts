@@ -135,6 +135,14 @@ const config: HardhatUserConfig = {
           browserURL: "https://amoy.polygonscan.com",
         },
       },
+      {
+        network: "arbitrumSepolia",
+        chainId: 421614,
+        urls: {
+          apiURL: "https://api.arbiscan.io/api",
+          browserURL: "https://arbiscan.io",
+        },
+      },
     ],
   },
   // configuration for etherscan-verify from hardhat-deploy plugin

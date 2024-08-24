@@ -1,0 +1,293 @@
+{
+  "address": "0x4f5D019771312889A4C2E23999640795B58597fA",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "wasteId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "creator",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "pet",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "aluminum",
+              "type": "uint256"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct Quantity",
+          "name": "quantity",
+          "type": "tuple"
+        }
+      ],
+      "name": "WasteRegistered",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wasteId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getWasteDetails",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "creator",
+              "type": "address"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "pet",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "aluminum",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Quantity",
+              "name": "quantity",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Waste",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "nextWasteId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "pet",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "aluminum",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Quantity",
+          "name": "quantity",
+          "type": "tuple"
+        }
+      ],
+      "name": "registerWaste",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "wastes",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "creator",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "pet",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "aluminum",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Quantity",
+          "name": "quantity",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x5f2415e6795baf50b331a809e946aa95c19f4b5f38fa259a6524cbdaeb85c9e1",
+  "receipt": {
+    "to": null,
+    "from": "0x0d6968f6275804a4F6593f939DA09F08C49020ba",
+    "contractAddress": "0x4f5D019771312889A4C2E23999640795B58597fA",
+    "transactionIndex": 1,
+    "gasUsed": "731899",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x7f416734e26cb1054460d46989d938eb25d30cad704f58b989f6b07bcbf03047",
+    "transactionHash": "0x5f2415e6795baf50b331a809e946aa95c19f4b5f38fa259a6524cbdaeb85c9e1",
+    "logs": [],
+    "blockNumber": 73862640,
+    "cumulativeGasUsed": "731899",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "be28c66d56be57cd512609aaab5895a0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"wasteId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"creator\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"pet\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"aluminum\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct Quantity\",\"name\":\"quantity\",\"type\":\"tuple\"}],\"name\":\"WasteRegistered\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"wasteId\",\"type\":\"uint256\"}],\"name\":\"getWasteDetails\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"creator\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"pet\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"aluminum\",\"type\":\"uint256\"}],\"internalType\":\"struct Quantity\",\"name\":\"quantity\",\"type\":\"tuple\"}],\"internalType\":\"struct Waste\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nextWasteId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"pet\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"aluminum\",\"type\":\"uint256\"}],\"internalType\":\"struct Quantity\",\"name\":\"quantity\",\"type\":\"tuple\"}],\"name\":\"registerWaste\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"wastes\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"creator\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"pet\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"aluminum\",\"type\":\"uint256\"}],\"internalType\":\"struct Quantity\",\"name\":\"quantity\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/WasteRegistry_1.sol\":\"WasteRegistry\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/WasteRegistry_1.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nstruct Quantity {\\r\\n\\tuint256 pet;\\r\\n\\tuint256 aluminum;\\r\\n}\\r\\n\\r\\nstruct Waste {\\r\\n\\tuint256 id;\\r\\n\\taddress creator;\\r\\n\\tQuantity quantity;\\r\\n}\\r\\n\\r\\ncontract WasteRegistry {\\r\\n\\tWaste[] public wastes;\\r\\n\\tuint256 public nextWasteId = 1;\\r\\n\\r\\n\\tevent WasteRegistered(\\r\\n\\t\\tuint256 indexed wasteId,\\r\\n\\t\\taddress indexed creator,\\r\\n\\t\\tQuantity quantity\\r\\n\\t);\\r\\n\\r\\n\\tfunction registerWaste(Quantity memory quantity) public {\\r\\n\\t\\tWaste memory newWaste = Waste({\\r\\n\\t\\t\\tid: nextWasteId,\\r\\n\\t\\t\\tcreator: msg.sender,\\r\\n\\t\\t\\tquantity: quantity\\r\\n\\t\\t});\\r\\n\\t\\twastes.push(newWaste);\\r\\n\\t\\temit WasteRegistered(nextWasteId, msg.sender, quantity);\\r\\n\\t\\tnextWasteId++;\\r\\n\\t}\\r\\n\\r\\n\\tfunction getWasteDetails(\\r\\n\\t\\tuint256 wasteId\\r\\n\\t) public view returns (Waste memory) {\\r\\n\\t\\trequire(wasteId <= wastes.length, \\\"Waste ID does not exist\\\");\\r\\n\\t\\treturn wastes[wasteId - 1];\\r\\n\\t}\\r\\n}\\r\\n\",\"keccak256\":\"0x138977ddf628dd00313d977839cc827a8389537d047a0bde4bcbe0e65fa8e2a2\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60806040526001805534801561001457600080fd5b50610508806100246000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806386d6c0bb14610051578063b9d9a4871461007c578063d17d3e1a14610091578063f755378a146100b1575b600080fd5b61006461005f366004610377565b6100c8565b60405161007393929190610390565b60405180910390f35b61008f61008a3660046103c5565b61011f565b005b6100a461009f366004610377565b61025e565b6040516100739190610422565b6100ba60015481565b604051908152602001610073565b600081815481106100d857600080fd5b60009182526020918290206004909102018054600182015460408051808201909152600284015481526003909301549383019390935292506001600160a01b039091169083565b6040805160608101825260018054825233602080840182815284860187815260008054808701825590805286517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56360049092029182015591517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e564830180546001600160a01b0319166001600160a01b039092169190911790555180517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e565830155909101517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5669091015590549251919290917f10ee7bec487686560b8ba405e7d1d533269eb19ad618be1974bdb4e0c443bcfe9061023d908690610461565b60405180910390a36001805490600061025583610490565b91905055505050565b610266610333565b6000548211156102bc5760405162461bcd60e51b815260206004820152601760248201527f576173746520494420646f6573206e6f74206578697374000000000000000000604482015260640160405180910390fd5b60006102c96001846104a9565b815481106102d9576102d96104bc565b60009182526020918290206040805160608101825260049093029091018054835260018101546001600160a01b03168385015281518083018352600282015481526003909101549381019390935281019190915292915050565b60405180606001604052806000815260200160006001600160a01b03168152602001610372604051806040016040528060008152602001600081525090565b905290565b60006020828403121561038957600080fd5b5035919050565b8381526001600160a01b0383166020820152608081016103bd604083018480518252602090810151910152565b949350505050565b6000604082840312156103d757600080fd5b6040516040810181811067ffffffffffffffff8211171561040857634e487b7160e01b600052604160045260246000fd5b604052823581526020928301359281019290925250919050565b815181526020808301516001600160a01b031690820152604080830151608083019161045a9084018280518252602090810151910152565b5092915050565b8151815260208083015190820152604081015b92915050565b634e487b7160e01b600052601160045260246000fd5b6000600182016104a2576104a261047a565b5060010190565b818103818111156104745761047461047a565b634e487b7160e01b600052603260045260246000fdfea26469706673582212206c431beb9d009ddcbafb2f9c098dd50f2a202b543ab19ceee2900b9056a15ee664736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806386d6c0bb14610051578063b9d9a4871461007c578063d17d3e1a14610091578063f755378a146100b1575b600080fd5b61006461005f366004610377565b6100c8565b60405161007393929190610390565b60405180910390f35b61008f61008a3660046103c5565b61011f565b005b6100a461009f366004610377565b61025e565b6040516100739190610422565b6100ba60015481565b604051908152602001610073565b600081815481106100d857600080fd5b60009182526020918290206004909102018054600182015460408051808201909152600284015481526003909301549383019390935292506001600160a01b039091169083565b6040805160608101825260018054825233602080840182815284860187815260008054808701825590805286517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56360049092029182015591517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e564830180546001600160a01b0319166001600160a01b039092169190911790555180517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e565830155909101517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5669091015590549251919290917f10ee7bec487686560b8ba405e7d1d533269eb19ad618be1974bdb4e0c443bcfe9061023d908690610461565b60405180910390a36001805490600061025583610490565b91905055505050565b610266610333565b6000548211156102bc5760405162461bcd60e51b815260206004820152601760248201527f576173746520494420646f6573206e6f74206578697374000000000000000000604482015260640160405180910390fd5b60006102c96001846104a9565b815481106102d9576102d96104bc565b60009182526020918290206040805160608101825260049093029091018054835260018101546001600160a01b03168385015281518083018352600282015481526003909101549381019390935281019190915292915050565b60405180606001604052806000815260200160006001600160a01b03168152602001610372604051806040016040528060008152602001600081525090565b905290565b60006020828403121561038957600080fd5b5035919050565b8381526001600160a01b0383166020820152608081016103bd604083018480518252602090810151910152565b949350505050565b6000604082840312156103d757600080fd5b6040516040810181811067ffffffffffffffff8211171561040857634e487b7160e01b600052604160045260246000fd5b604052823581526020928301359281019290925250919050565b815181526020808301516001600160a01b031690820152604080830151608083019161045a9084018280518252602090810151910152565b5092915050565b8151815260208083015190820152604081015b92915050565b634e487b7160e01b600052601160045260246000fd5b6000600182016104a2576104a261047a565b5060010190565b818103818111156104745761047461047a565b634e487b7160e01b600052603260045260246000fdfea26469706673582212206c431beb9d009ddcbafb2f9c098dd50f2a202b543ab19ceee2900b9056a15ee664736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3346,
+        "contract": "contracts/WasteRegistry_1.sol:WasteRegistry",
+        "label": "wastes",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_array(t_struct(Waste)3342_storage)dyn_storage"
+      },
+      {
+        "astId": 3349,
+        "contract": "contracts/WasteRegistry_1.sol:WasteRegistry",
+        "label": "nextWasteId",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_struct(Waste)3342_storage)dyn_storage": {
+        "base": "t_struct(Waste)3342_storage",
+        "encoding": "dynamic_array",
+        "label": "struct Waste[]",
+        "numberOfBytes": "32"
+      },
+      "t_struct(Quantity)3334_storage": {
+        "encoding": "inplace",
+        "label": "struct Quantity",
+        "members": [
+          {
+            "astId": 3331,
+            "contract": "contracts/WasteRegistry_1.sol:WasteRegistry",
+            "label": "pet",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 3333,
+            "contract": "contracts/WasteRegistry_1.sol:WasteRegistry",
+            "label": "aluminum",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_struct(Waste)3342_storage": {
+        "encoding": "inplace",
+        "label": "struct Waste",
+        "members": [
+          {
+            "astId": 3336,
+            "contract": "contracts/WasteRegistry_1.sol:WasteRegistry",
+            "label": "id",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 3338,
+            "contract": "contracts/WasteRegistry_1.sol:WasteRegistry",
+            "label": "creator",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address"
+          },
+          {
+            "astId": 3341,
+            "contract": "contracts/WasteRegistry_1.sol:WasteRegistry",
+            "label": "quantity",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_struct(Quantity)3334_storage"
+          }
+        ],
+        "numberOfBytes": "128"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
