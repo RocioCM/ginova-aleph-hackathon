@@ -45,9 +45,20 @@ contract FardoMarketplace {
 		emit FardoListedForSale(tokenId, msg.sender, price);
 	}
 
+	function updatePrice(uint256 tokenId, uint256 price) public {
+		Sale memory sale = sales[tokenId];
+		require(
+			sale.seller == msg.sender,
+			"Only the seller can update the price"
+		);
+		require(price > 0, "Price must be greater than zero");
+
+		sales[tokenId].price = price;
+	}
+
 	function buyFardo(uint256 tokenId) public payable {
 		Sale memory sale = sales[tokenId];
-		require(msg.value == sale.price, "Incorrect price");
+		require(msg.value != sale.price, "Incorrect price");
 
 		// Calculate fees
 		uint256 fee = (msg.value * platformFee) / 10000;

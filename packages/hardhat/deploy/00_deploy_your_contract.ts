@@ -21,7 +21,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
 
-  await deploy("WasteRegistry", {
+  const c1 = await deploy("WasteRegistry", {
     from: deployer,
     // Contract constructor arguments
     args: [],
@@ -31,32 +31,65 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
     autoMine: true,
   });
 
-  await deploy("CollectionAndReception", {
+  console.log("WasteRegistry deployed to:", c1.address);
+
+  const c2 = await deploy("CollectionAndReception", {
     from: deployer,
     args: [],
     log: true,
     autoMine: true,
   });
 
-  const fardoNFTDeployment = await deploy("FardoNFT", {
+  console.log("CollectionAndReception deployed to:", c2.address);
+
+  const c3 = await deploy("FardoNFT", {
     from: deployer,
     args: [],
     log: true,
     autoMine: true,
   });
 
-  await deploy("FardoMarketplace", {
+  console.log("FardoNFT deployed to:", c3.address);
+
+  const c4 = await deploy("FardoMarketplace", {
     from: deployer,
-    args: [fardoNFTDeployment.address],
+    args: [c3.address],
     log: true,
     autoMine: true,
   });
 
-  console.log("Successfully deployed all contracts!!");
+  console.log("FardoMarketplace deployed to:", c4.address);
+
+  console.log("Successfully deployed all contracts!!", hre.network.name);
 
   // Get the deployed contract to interact with it after deploying.
   // const yourContract = await hre.ethers.getContract<Contract>("YourContract", deployer);
   // console.log("👋 Initial greeting:", await yourContract.greeting());
+
+  if (hre.network.name !== "localhost") {
+    console.log("Verifying contract...");
+
+    try {
+      await hre.run("verify:verify", { address: c1.address, constructorArguments: [] });
+      console.log("Contract WasteRegistry verified!");
+
+      await hre.run("verify:verify", { address: c2.address, constructorArguments: [] });
+      console.log("Contract CollectionAndReception verified!");
+
+      await hre.run("verify:verify", { address: c3.address, constructorArguments: [] });
+      console.log("Contract FardoNFT verified!");
+
+      await hre.run("verify:verify", { address: c4.address, constructorArguments: [c3.address] });
+      console.log("Contract FardoMarketplace verified!");
+    } catch (error) {
+      if ((error as any)?.message.toLowerCase().includes("already verified")) {
+        console.log("Contract already verified!");
+      } else {
+        console.error("Verification failed:", error);
+      }
+    }
+  }
+  console.log("Successful deployment!");
 };
 
 export default deployYourContract;

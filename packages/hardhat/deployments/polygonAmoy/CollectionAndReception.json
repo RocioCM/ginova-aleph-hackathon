@@ -1,0 +1,510 @@
+{
+  "address": "0xE7609C6FAb936b10ECf6410E91Cd0C53B73Aa1eb",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "wasteId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "collector",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "pet",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "aluminum",
+              "type": "uint256"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct Quantity",
+          "name": "receivedQuantity",
+          "type": "tuple"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum Status",
+          "name": "collectedStatus",
+          "type": "uint8"
+        }
+      ],
+      "name": "WasteCollected",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "wasteId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "recycler",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "pet",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "aluminum",
+              "type": "uint256"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct Quantity",
+          "name": "receivedQuantity",
+          "type": "tuple"
+        }
+      ],
+      "name": "WasteReceived",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wasteId",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateReliability",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "collections",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "wasteId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "collector",
+          "type": "address"
+        },
+        {
+          "internalType": "enum Status",
+          "name": "status",
+          "type": "uint8"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "pet",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "aluminum",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Quantity",
+          "name": "quantity",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "receptions",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "wasteId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "recycler",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "pet",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "aluminum",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Quantity",
+          "name": "receivedQuantity",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wasteId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "collected",
+          "type": "bool"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "pet",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "aluminum",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Quantity",
+          "name": "quantity",
+          "type": "tuple"
+        }
+      ],
+      "name": "recordCollection",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wasteId",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "pet",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "aluminum",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Quantity",
+          "name": "receivedQuantity",
+          "type": "tuple"
+        }
+      ],
+      "name": "recordReception",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "reliability",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "reliabilityScore",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalCollections",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x98c265af6ca3524e5d5263eab07d8c7381def0c1ccce0994ba62d9ec5ac8dd0a",
+  "receipt": {
+    "to": null,
+    "from": "0x0d6968f6275804a4F6593f939DA09F08C49020ba",
+    "contractAddress": "0xE7609C6FAb936b10ECf6410E91Cd0C53B73Aa1eb",
+    "transactionIndex": 0,
+    "gasUsed": "584100",
+    "logsBloom": "0x00000000000020000000000000000000000000002000000000000000000000000000000000000000000000000000000000008000000000000000000040000000000000000000000000000000000000800000000000000000000100000000000000008000000000100000000000000000000000000000001080000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000004000000000000000000001000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000100000",
+    "blockHash": "0x2ccc7fa623ccbdabd9b3b53d57797cf3a6609830f9e67327cbff15181ae97e49",
+    "transactionHash": "0x98c265af6ca3524e5d5263eab07d8c7381def0c1ccce0994ba62d9ec5ac8dd0a",
+    "logs": [
+      {
+        "transactionIndex": 0,
+        "blockNumber": 11120048,
+        "transactionHash": "0x98c265af6ca3524e5d5263eab07d8c7381def0c1ccce0994ba62d9ec5ac8dd0a",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x0000000000000000000000000d6968f6275804a4f6593f939da09f08c49020ba",
+          "0x0000000000000000000000004631753190f2f5a15a7ba172bbac102b7d95fa22"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000003e41135e66300000000000000000000000000000000000000000000000000006caad574d5b1d5a00000000000000000000000000000000000000000000018ce214ea0a7308506d000000000000000000000000000000000000000000000000068c6c43eef4ed5a00000000000000000000000000000000000000000000018ce2532b1dd16e806d",
+        "logIndex": 0,
+        "blockHash": "0x2ccc7fa623ccbdabd9b3b53d57797cf3a6609830f9e67327cbff15181ae97e49"
+      }
+    ],
+    "blockNumber": 11120048,
+    "cumulativeGasUsed": "584100",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "ff66887e4777d7005df94a1ce027f3c2",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"wasteId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"pet\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"aluminum\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct Quantity\",\"name\":\"receivedQuantity\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"enum Status\",\"name\":\"collectedStatus\",\"type\":\"uint8\"}],\"name\":\"WasteCollected\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"wasteId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recycler\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"pet\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"aluminum\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct Quantity\",\"name\":\"receivedQuantity\",\"type\":\"tuple\"}],\"name\":\"WasteReceived\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"wasteId\",\"type\":\"uint256\"}],\"name\":\"calculateReliability\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"collections\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"wasteId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"internalType\":\"enum Status\",\"name\":\"status\",\"type\":\"uint8\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"pet\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"aluminum\",\"type\":\"uint256\"}],\"internalType\":\"struct Quantity\",\"name\":\"quantity\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"receptions\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"wasteId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"recycler\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"pet\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"aluminum\",\"type\":\"uint256\"}],\"internalType\":\"struct Quantity\",\"name\":\"receivedQuantity\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"wasteId\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"collected\",\"type\":\"bool\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"pet\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"aluminum\",\"type\":\"uint256\"}],\"internalType\":\"struct Quantity\",\"name\":\"quantity\",\"type\":\"tuple\"}],\"name\":\"recordCollection\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"wasteId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"pet\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"aluminum\",\"type\":\"uint256\"}],\"internalType\":\"struct Quantity\",\"name\":\"receivedQuantity\",\"type\":\"tuple\"}],\"name\":\"recordReception\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"reliability\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"reliabilityScore\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalCollections\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/CollectionAndReception_2.sol\":\"CollectionAndReception\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/CollectionAndReception_2.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nenum Status {\\r\\n\\tPending,\\r\\n\\tCollected,\\r\\n\\tLost\\r\\n}\\r\\n\\r\\nstruct Quantity {\\r\\n\\tuint256 pet;\\r\\n\\tuint256 aluminum;\\r\\n}\\r\\n\\r\\nstruct Collection {\\r\\n\\tuint256 wasteId;\\r\\n\\taddress collector;\\r\\n\\tStatus status;\\r\\n\\tQuantity quantity;\\r\\n}\\r\\n\\r\\nstruct Reception {\\r\\n\\tuint256 wasteId;\\r\\n\\taddress recycler;\\r\\n\\tQuantity receivedQuantity;\\r\\n}\\r\\n\\r\\nstruct Reliability {\\r\\n\\tuint256 reliabilityScore;\\r\\n\\tuint256 totalCollections;\\r\\n}\\r\\n\\r\\ncontract CollectionAndReception {\\r\\n\\tmapping(address => Reliability) public reliability;\\r\\n\\tmapping(uint256 => Collection) public collections;\\r\\n\\tmapping(uint256 => Reception) public receptions;\\r\\n\\r\\n\\tevent WasteCollected(\\r\\n\\t\\tuint256 indexed wasteId,\\r\\n\\t\\taddress indexed collector,\\r\\n\\t\\tQuantity receivedQuantity,\\r\\n\\t\\tStatus collectedStatus\\r\\n\\t);\\r\\n\\tevent WasteReceived(\\r\\n\\t\\tuint256 indexed wasteId,\\r\\n\\t\\taddress indexed recycler,\\r\\n\\t\\tQuantity receivedQuantity\\r\\n\\t);\\r\\n\\r\\n\\tfunction recordCollection(\\r\\n\\t\\tuint256 wasteId,\\r\\n\\t\\tbool collected,\\r\\n\\t\\tQuantity memory quantity\\r\\n\\t) public {\\r\\n\\t\\trequire(\\r\\n\\t\\t\\tquantity.pet > 0 || quantity.aluminum > 0,\\r\\n\\t\\t\\t\\\"Waste was not collected\\\"\\r\\n\\t\\t);\\r\\n\\t\\tcollections[wasteId] = Collection({\\r\\n\\t\\t\\twasteId: wasteId,\\r\\n\\t\\t\\tcollector: msg.sender,\\r\\n\\t\\t\\tstatus: collected ? Status.Collected : Status.Lost,\\r\\n\\t\\t\\tquantity: quantity\\r\\n\\t\\t});\\r\\n\\t\\temit WasteCollected(\\r\\n\\t\\t\\twasteId,\\r\\n\\t\\t\\tmsg.sender,\\r\\n\\t\\t\\tquantity,\\r\\n\\t\\t\\tcollected ? Status.Collected : Status.Lost\\r\\n\\t\\t);\\r\\n\\t}\\r\\n\\r\\n\\tfunction recordReception(\\r\\n\\t\\tuint256 wasteId,\\r\\n\\t\\tQuantity memory receivedQuantity\\r\\n\\t) public {\\r\\n\\t\\trequire(\\r\\n\\t\\t\\treceivedQuantity.pet > 0 || receivedQuantity.aluminum > 0,\\r\\n\\t\\t\\t\\\"Waste was not received\\\"\\r\\n\\t\\t);\\r\\n\\t\\trequire(\\r\\n\\t\\t\\tcollections[wasteId].status == Status.Collected,\\r\\n\\t\\t\\t\\\"Waste was not collected\\\"\\r\\n\\t\\t);\\r\\n\\t\\trequire(receptions[wasteId].wasteId == 0, \\\"Waste was already received\\\");\\r\\n\\r\\n\\t\\treceptions[wasteId] = Reception({\\r\\n\\t\\t\\twasteId: wasteId,\\r\\n\\t\\t\\trecycler: msg.sender,\\r\\n\\t\\t\\treceivedQuantity: receivedQuantity\\r\\n\\t\\t});\\r\\n\\t\\temit WasteReceived(wasteId, msg.sender, receivedQuantity);\\r\\n\\r\\n\\t\\tuint256 reliabilityScore = calculateReliability(wasteId);\\r\\n\\t\\tReliability storage prevSenderReliability = reliability[msg.sender];\\r\\n\\t\\tprevSenderReliability.reliabilityScore =\\r\\n\\t\\t\\t(prevSenderReliability.reliabilityScore *\\r\\n\\t\\t\\t\\tprevSenderReliability.totalCollections +\\r\\n\\t\\t\\t\\treliabilityScore) /\\r\\n\\t\\t\\t(prevSenderReliability.totalCollections + 1);\\r\\n\\t\\tprevSenderReliability.totalCollections++;\\r\\n\\t}\\r\\n\\r\\n\\tfunction calculateReliability(\\r\\n\\t\\tuint256 wasteId\\r\\n\\t) public view returns (uint256) {\\r\\n\\t\\tCollection memory collection = collections[wasteId];\\r\\n\\t\\tReception memory reception = receptions[wasteId];\\r\\n\\t\\trequire(\\r\\n\\t\\t\\tcollection.status == Status.Collected,\\r\\n\\t\\t\\t\\\"Waste was not collected\\\"\\r\\n\\t\\t);\\r\\n\\r\\n\\t\\tuint256 scale = 100;\\r\\n\\r\\n\\t\\t// Reliability is 100 if the recycler received the exact quantity of waste collected.\\r\\n\\t\\tuint256 reliabilityScore = (((scale * reception.receivedQuantity.pet) /\\r\\n\\t\\t\\t(collection.quantity.pet)) * 50) /\\r\\n\\t\\t\\tscale +\\r\\n\\t\\t\\t(((scale * reception.receivedQuantity.aluminum) /\\r\\n\\t\\t\\t\\t(collection.quantity.aluminum)) * 50) /\\r\\n\\t\\t\\tscale;\\r\\n\\r\\n\\t\\tif (reliabilityScore > 100) {\\r\\n\\t\\t\\treliabilityScore = 100;\\r\\n\\t\\t}\\r\\n\\r\\n\\t\\treturn reliabilityScore;\\r\\n\\t}\\r\\n}\\r\\n\",\"keccak256\":\"0xcfe6ef42631f2036c385da5ee85df31ffe62064b37cc1a6036b2962093c55746\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061099a806100206000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c80631d997a251461006757806355482d67146100a85780638c2b6cf7146100bd578063a10e5633146100de578063ec913bc11461013f578063fdbda0ec14610152575b600080fd5b61008e6100753660046106bd565b6000602081905290815260409020805460019091015482565b604080519283526020830191909152015b60405180910390f35b6100bb6100b636600461074a565b6101bf565b005b6100d06100cb366004610777565b6103d7565b60405190815260200161009f565b6101306100ec366004610777565b60026020818152600092835260409283902080546001820154855180870190965293820154855260039091015491840191909152916001600160a01b039091169083565b60405161009f93929190610790565b6100bb61014d3660046107c5565b610583565b6101af610160366004610777565b6001602081815260009283526040928390208054928101548451808601909552600282015485526003909101549184019190915290916001600160a01b03821691600160a01b900460ff169084565b60405161009f9493929190610841565b80511515806101d2575060008160200151115b61021c5760405162461bcd60e51b815260206004820152601660248201527515d85cdd19481dd85cc81b9bdd081c9958d95a5d995960521b60448201526064015b60405180910390fd5b600160008381526001602081905260409091200154600160a01b900460ff16600281111561024c5761024c610809565b146102695760405162461bcd60e51b81526004016102139061087a565b600082815260026020526040902054156102c55760405162461bcd60e51b815260206004820152601a60248201527f57617374652077617320616c72656164792072656365697665640000000000006044820152606401610213565b6040805160608101825283815233602080830182815283850186815260008881526002808552908790209551865591516001860180546001600160a01b0319166001600160a01b03909216919091179055518051918501919091550151600390920191909155905183907ff6657eb9e95ad1fdda7b68c1fa482c2318d21f87ae39b5a55795a11b2e4191789061035c9085906108b1565b60405180910390a3600061036f836103d7565b3360009081526020819052604090206001808201549293509091610392916108e0565b6001820154825484916103a4916108f3565b6103ae91906108e0565b6103b8919061090a565b81556001810180549060006103cc8361092c565b919050555050505050565b6000818152600160208181526040808420815160808101835281548152938101546001600160a01b038116938501939093528493929091830190600160a01b900460ff16600281111561042c5761042c610809565b600281111561043d5761043d610809565b815260408051808201825260028481015482526003948501546020838101919091529384019190915260008881528184528290208251606081018452815481526001828101546001600160a01b031682870152845180860186529383015484529190950154938201939093529083015291925090826040015160028111156104c7576104c7610809565b146104e45760405162461bcd60e51b81526004016102139061087a565b6000606490506000818460600151602001518460400151602001518461050a91906108f3565b610514919061090a565b61051f9060326108f3565b610529919061090a565b60608501515160408501515184919061054290836108f3565b61054c919061090a565b6105579060326108f3565b610561919061090a565b61056b91906108e0565b9050606481111561057a575060645b95945050505050565b8051151580610596575060008160200151115b6105b25760405162461bcd60e51b81526004016102139061087a565b60408051608081018252848152336020820152908101836105d45760026105d7565b60015b60028111156105e8576105e8610809565b8152602090810183905260008581526001808352604091829020845181559284015190830180546001600160a01b039092166001600160a01b0319831681178255928501519290916001600160a81b03191617600160a01b83600281111561065257610652610809565b021790555060609190910151805160028301556020015160039091015533837f4ccae34df2aea84fc93a97e4f97d7de5df6aa1f5bcb72ad60b45aa0793b890d2838561069f5760026106a2565b60015b6040516106b0929190610945565b60405180910390a3505050565b6000602082840312156106cf57600080fd5b81356001600160a01b03811681146106e657600080fd5b9392505050565b6000604082840312156106ff57600080fd5b6040516040810181811067ffffffffffffffff8211171561073057634e487b7160e01b600052604160045260246000fd5b604052823581526020928301359281019290925250919050565b6000806060838503121561075d57600080fd5b8235915061076e84602085016106ed565b90509250929050565b60006020828403121561078957600080fd5b5035919050565b8381526001600160a01b0383166020820152608081016107bd604083018480518252602090810151910152565b949350505050565b6000806000608084860312156107da57600080fd5b83359250602084013580151581146107f157600080fd5b915061080085604086016106ed565b90509250925092565b634e487b7160e01b600052602160045260246000fd5b6003811061083d57634e487b7160e01b600052602160045260246000fd5b9052565b8481526001600160a01b038416602082015260a08101610864604083018561081f565b825160608301526020830151608083015261057a565b60208082526017908201527f576173746520776173206e6f7420636f6c6c6563746564000000000000000000604082015260600190565b8151815260208083015190820152604081015b92915050565b634e487b7160e01b600052601160045260246000fd5b808201808211156108c4576108c46108ca565b80820281158282048414176108c4576108c46108ca565b60008261092757634e487b7160e01b600052601260045260246000fd5b500490565b60006001820161093e5761093e6108ca565b5060010190565b8251815260208084015190820152606081016106e6604083018461081f56fea26469706673582212206a8e1a95f7eb92a5885575b78e97105faca026c8f80dd19e55647846f6757ec264736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c80631d997a251461006757806355482d67146100a85780638c2b6cf7146100bd578063a10e5633146100de578063ec913bc11461013f578063fdbda0ec14610152575b600080fd5b61008e6100753660046106bd565b6000602081905290815260409020805460019091015482565b604080519283526020830191909152015b60405180910390f35b6100bb6100b636600461074a565b6101bf565b005b6100d06100cb366004610777565b6103d7565b60405190815260200161009f565b6101306100ec366004610777565b60026020818152600092835260409283902080546001820154855180870190965293820154855260039091015491840191909152916001600160a01b039091169083565b60405161009f93929190610790565b6100bb61014d3660046107c5565b610583565b6101af610160366004610777565b6001602081815260009283526040928390208054928101548451808601909552600282015485526003909101549184019190915290916001600160a01b03821691600160a01b900460ff169084565b60405161009f9493929190610841565b80511515806101d2575060008160200151115b61021c5760405162461bcd60e51b815260206004820152601660248201527515d85cdd19481dd85cc81b9bdd081c9958d95a5d995960521b60448201526064015b60405180910390fd5b600160008381526001602081905260409091200154600160a01b900460ff16600281111561024c5761024c610809565b146102695760405162461bcd60e51b81526004016102139061087a565b600082815260026020526040902054156102c55760405162461bcd60e51b815260206004820152601a60248201527f57617374652077617320616c72656164792072656365697665640000000000006044820152606401610213565b6040805160608101825283815233602080830182815283850186815260008881526002808552908790209551865591516001860180546001600160a01b0319166001600160a01b03909216919091179055518051918501919091550151600390920191909155905183907ff6657eb9e95ad1fdda7b68c1fa482c2318d21f87ae39b5a55795a11b2e4191789061035c9085906108b1565b60405180910390a3600061036f836103d7565b3360009081526020819052604090206001808201549293509091610392916108e0565b6001820154825484916103a4916108f3565b6103ae91906108e0565b6103b8919061090a565b81556001810180549060006103cc8361092c565b919050555050505050565b6000818152600160208181526040808420815160808101835281548152938101546001600160a01b038116938501939093528493929091830190600160a01b900460ff16600281111561042c5761042c610809565b600281111561043d5761043d610809565b815260408051808201825260028481015482526003948501546020838101919091529384019190915260008881528184528290208251606081018452815481526001828101546001600160a01b031682870152845180860186529383015484529190950154938201939093529083015291925090826040015160028111156104c7576104c7610809565b146104e45760405162461bcd60e51b81526004016102139061087a565b6000606490506000818460600151602001518460400151602001518461050a91906108f3565b610514919061090a565b61051f9060326108f3565b610529919061090a565b60608501515160408501515184919061054290836108f3565b61054c919061090a565b6105579060326108f3565b610561919061090a565b61056b91906108e0565b9050606481111561057a575060645b95945050505050565b8051151580610596575060008160200151115b6105b25760405162461bcd60e51b81526004016102139061087a565b60408051608081018252848152336020820152908101836105d45760026105d7565b60015b60028111156105e8576105e8610809565b8152602090810183905260008581526001808352604091829020845181559284015190830180546001600160a01b039092166001600160a01b0319831681178255928501519290916001600160a81b03191617600160a01b83600281111561065257610652610809565b021790555060609190910151805160028301556020015160039091015533837f4ccae34df2aea84fc93a97e4f97d7de5df6aa1f5bcb72ad60b45aa0793b890d2838561069f5760026106a2565b60015b6040516106b0929190610945565b60405180910390a3505050565b6000602082840312156106cf57600080fd5b81356001600160a01b03811681146106e657600080fd5b9392505050565b6000604082840312156106ff57600080fd5b6040516040810181811067ffffffffffffffff8211171561073057634e487b7160e01b600052604160045260246000fd5b604052823581526020928301359281019290925250919050565b6000806060838503121561075d57600080fd5b8235915061076e84602085016106ed565b90509250929050565b60006020828403121561078957600080fd5b5035919050565b8381526001600160a01b0383166020820152608081016107bd604083018480518252602090810151910152565b949350505050565b6000806000608084860312156107da57600080fd5b83359250602084013580151581146107f157600080fd5b915061080085604086016106ed565b90509250925092565b634e487b7160e01b600052602160045260246000fd5b6003811061083d57634e487b7160e01b600052602160045260246000fd5b9052565b8481526001600160a01b038416602082015260a08101610864604083018561081f565b825160608301526020830151608083015261057a565b60208082526017908201527f576173746520776173206e6f7420636f6c6c6563746564000000000000000000604082015260600190565b8151815260208083015190820152604081015b92915050565b634e487b7160e01b600052601160045260246000fd5b808201808211156108c4576108c46108ca565b80820281158282048414176108c4576108c46108ca565b60008261092757634e487b7160e01b600052601260045260246000fd5b500490565b60006001820161093e5761093e6108ca565b5060010190565b8251815260208084015190820152606081016106e6604083018461081f56fea26469706673582212206a8e1a95f7eb92a5885575b78e97105faca026c8f80dd19e55647846f6757ec264736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 2789,
+        "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+        "label": "reliability",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_struct(Reliability)2784_storage)"
+      },
+      {
+        "astId": 2794,
+        "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+        "label": "collections",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_uint256,t_struct(Collection)2771_storage)"
+      },
+      {
+        "astId": 2799,
+        "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+        "label": "receptions",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_uint256,t_struct(Reception)2779_storage)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_enum(Status)2755": {
+        "encoding": "inplace",
+        "label": "enum Status",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_struct(Reliability)2784_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct Reliability)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Reliability)2784_storage"
+      },
+      "t_mapping(t_uint256,t_struct(Collection)2771_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct Collection)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Collection)2771_storage"
+      },
+      "t_mapping(t_uint256,t_struct(Reception)2779_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct Reception)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Reception)2779_storage"
+      },
+      "t_struct(Collection)2771_storage": {
+        "encoding": "inplace",
+        "label": "struct Collection",
+        "members": [
+          {
+            "astId": 2762,
+            "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+            "label": "wasteId",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 2764,
+            "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+            "label": "collector",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address"
+          },
+          {
+            "astId": 2767,
+            "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+            "label": "status",
+            "offset": 20,
+            "slot": "1",
+            "type": "t_enum(Status)2755"
+          },
+          {
+            "astId": 2770,
+            "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+            "label": "quantity",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_struct(Quantity)2760_storage"
+          }
+        ],
+        "numberOfBytes": "128"
+      },
+      "t_struct(Quantity)2760_storage": {
+        "encoding": "inplace",
+        "label": "struct Quantity",
+        "members": [
+          {
+            "astId": 2757,
+            "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+            "label": "pet",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 2759,
+            "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+            "label": "aluminum",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_struct(Reception)2779_storage": {
+        "encoding": "inplace",
+        "label": "struct Reception",
+        "members": [
+          {
+            "astId": 2773,
+            "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+            "label": "wasteId",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 2775,
+            "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+            "label": "recycler",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address"
+          },
+          {
+            "astId": 2778,
+            "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+            "label": "receivedQuantity",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_struct(Quantity)2760_storage"
+          }
+        ],
+        "numberOfBytes": "128"
+      },
+      "t_struct(Reliability)2784_storage": {
+        "encoding": "inplace",
+        "label": "struct Reliability",
+        "members": [
+          {
+            "astId": 2781,
+            "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+            "label": "reliabilityScore",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 2783,
+            "contract": "contracts/CollectionAndReception_2.sol:CollectionAndReception",
+            "label": "totalCollections",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
