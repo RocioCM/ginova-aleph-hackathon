@@ -21,8 +21,7 @@ const Home: NextPage = () => {
             height={200}
           />
           <p className="text-center text-2xl max-w-[500px] mt-8">
-            Ginova is a decentralized application that allows you to create, deploy, and interact with smart contracts
-            on the Ethereum blockchain.
+            Making the circular economy more efficient and traceable than ever
           </p>
         </div>
 
