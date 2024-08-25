@@ -139,8 +139,8 @@ const config: HardhatUserConfig = {
         network: "arbitrumSepolia",
         chainId: 421614,
         urls: {
-          apiURL: "https://api.arbiscan.io/api",
-          browserURL: "https://arbiscan.io",
+          apiURL: "https://api-sepolia.arbiscan.io/api",
+          browserURL: "https://sepolia.arbiscan.io/",
         },
       },
     ],
