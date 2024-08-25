@@ -1,81 +1,42 @@
-# 🏗 Scaffold-ETH 2
+# Ginova
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
+Making the circular economy more efficient and traceable than ever
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+## This project
 
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
+This repository contains a prototype of the Ginova blockchain bussiness model. It is a decentralized application that allows the traceability of waste from its generation to its recycling.
 
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+- **WasteRegistry**: A smart contract that allows the registration of waste by the users that generate it.
+- **CollectionAndReception**: A smart contract that allows the registration of the collection and reception of waste by the users that collect it.
+- **FardoNFT**: A smart contract that allows the minting of NFTs for the waste registered in the WasteRegistry.
+- **FardoMarketplace**: A smart contract that allows the sale of the NFTs minted in the FardoNFT contract.
 
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
+### Technologies
 
-## Requirements
+We used Scaffold-eth-2 to build the project easily focusing on the business logic of the project. We deployed our project simultaneously on Polygon Amoy Testnet and Arbitrum Sepolia Testnet to show the scalability of the project.
 
-Before you begin, you need to install the following tools:
+You can access the frontend deployed on: [Vercel](https://aleph-hackathon-eta.vercel.app/)
 
-- [Node (>= v18.17)](https://nodejs.org/en/download/)
-- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
-- [Git](https://git-scm.com/downloads)
+You can switch between networks using the dropdown on the top right corner of the page or changing the network in the Metamask extension or your connected wallet.
 
-## Quickstart
+#### Polygon Amoy Deployed Contracts
 
-To get started with Scaffold-ETH 2, follow the steps below:
+- WasteRegistry deployed to: 0x4f5D019771312889A4C2E23999640795B58597fA [Explorer](https://amoy.polygonscan.com/address/0x4f5D019771312889A4C2E23999640795B58597fA)
+- CollectionAndReception deployed to: 0xE7609C6FAb936b10ECf6410E91Cd0C53B73Aa1eb [Explorer](https://amoy.polygonscan.com/address/0xE7609C6FAb936b10ECf6410E91Cd0C53B73Aa1eb)
+- FardoNFT deployed to: 0xdd049c9e60A90356D4800568ae7CC8604272580B [Explorer](https://amoy.polygonscan.com/address/0xdd049c9e60A90356D4800568ae7CC8604272580B)
+- FardoMarketplace deployed to: 0x6Ddb64Ca2c8F6B5EfdB1752ddB8078B8FF74c42D [Explorer](https://amoy.polygonscan.com/address/0x6Ddb64Ca2c8F6B5EfdB1752ddB8078B8FF74c42D)
 
-1. Clone this repo & install dependencies
+#### Arbitrum Sepolia Deployed Contracts
 
-```
-git clone https://github.com/scaffold-eth/scaffold-eth-2.git
-cd scaffold-eth-2
-yarn install
-```
+- WasteRegistry deployed to: 0x4f5D019771312889A4C2E23999640795B58597fA [Explorer](https://sepolia.arbiscan.io/address/0x4f5D019771312889A4C2E23999640795B58597fA)
+- CollectionAndReception deployed to: 0xE7609C6FAb936b10ECf6410E91Cd0C53B73Aa1eb [Explorer](https://sepolia.arbiscan.io/address/0xE7609C6FAb936b10ECf6410E91Cd0C53B73Aa1eb)
+- FardoNFT deployed to: 0xdd049c9e60A90356D4800568ae7CC8604272580B [Explorer](https://sepolia.arbiscan.io/address/0xdd049c9e60A90356D4800568ae7CC8604272580B)
+- FardoMarketplace deployed to: 0x6Ddb64Ca2c8F6B5EfdB1752ddB8078B8FF74c42D [Explorer](https://sepolia.arbiscan.io/address/0x6Ddb64Ca2c8F6B5EfdB1752ddB8078B8FF74c42D)
 
-2. Run a local network in the first terminal:
+### Usage
 
-```
-yarn chain
-```
+You can use the frontend to interact with the methods of the smart contracts directly. You can register waste, collect waste, mint NFTs and sell them in the marketplace.
 
-This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `hardhat.config.ts`.
+In a real scenario, all this interaction would become from different users through different parts of our system. For example, the registration of waste would be done by the user that generate it, using the frontend app. The collection and reception of waste would be done by the companies that collect it, using the app too. The minting of NFTs would be done by the recycling companies through IoT devices that would register the weight of the waste and the quality of the material or even integrating with their ERP systems. Finally, the sale of the NFTs would be done by the recycling companies to the companies that need the recycled material, using a marketplace app.
 
-3. On a second terminal, deploy the test contract:
-
-```
-yarn deploy
-```
-
-This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
-
-4. On a third terminal, start your NextJS app:
-
-```
-yarn start
-```
-
-Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
-
-**What's next**:
-
-- Edit your smart contract `YourContract.sol` in `packages/hardhat/contracts`
-- Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
-- Edit your deployment scripts in `packages/hardhat/deploy`
-- Edit your smart contract test in: `packages/hardhat/test`. To run test use `yarn hardhat:test`
-
-## Documentation
-
-Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
-
-To know more about its features, check out our [website](https://scaffoldeth.io).
-
-## Contributing to Scaffold-ETH 2
-
-We welcome contributions to Scaffold-ETH 2!
-
-Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
+For this prototype, we used this very simple frontend to simulate all these interactions. But the real power of the system is in the integration with the real world through IoT devices and other oracle services.
